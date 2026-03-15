@@ -38,6 +38,6 @@ def get_weather(city: str) -> dict:
 def get_fahrenheitFromCelsius(temp: float) -> float:
     return temp * 1.8 + 32
 
-if __name__ == "__main__":
-    # STDIO transport by default (best for local labs and desktop MCP clients)
-    mcp.run()
+# FastMCP ASGI app (this is what Uvicorn will serve)
+app = mcp.http_app()
+
